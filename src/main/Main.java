@@ -23,7 +23,8 @@ public class Main {
 
 			switch (escolha) {
 			case 0: {
-				partida.printPlacar();
+				partida.printPlacarFimPartida();
+				System.out.println("\n\tJogo encerrado!\n\tObrigado por jogar!");
 				break;
 			}
 			case 1: {

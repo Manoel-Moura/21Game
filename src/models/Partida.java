@@ -41,7 +41,7 @@ public class Partida {
 	// Inicia uma partida
 	public void init() throws exceptionPorNumeroDeJogadoresInvalidos, exceptionPorNumeroDeEntradaInvalida {
 		if (jogadores.size() >= 2) {
-			baralho = new Baralho();
+			iniciaBaralho();
 			cartaDoTopo = 0;
 			limpaMao();
 			distribuiCarta();
@@ -174,6 +174,7 @@ public class Partida {
 
 		return jogador;
 	}
+	
 
 	public void printPlacar() {
 		System.out.println(" ");
@@ -181,6 +182,26 @@ public class Partida {
 			System.out.println(j.getNome() + " Vitorias: " + placar.retornaNumeroDeVitorias(j));
 
 		}
+		if(jogadores.size() == 0)
+			System.out.println("Lista de jogadores vazia!");
+		System.out.println("Empate: " + placar.retornaNumeroDeEmpates());
+
+	}
+	
+	public void printPlacarFimPartida() {
+		System.out.println(" ");
+		int cont = 0;
+		for (Jogador j : jogadores) {
+			int Nvitorias = placar.retornaNumeroDeVitorias(j);
+			if(Nvitorias != 0)
+				System.out.println(j.getNome() + " Vitorias: " + Nvitorias);
+				cont++;
+
+		}
+		if(jogadores.size() == 0)
+			System.out.println("Lista de jogadores vazia!");
+		if(cont == 0 && jogadores.size() != 0)
+			System.out.println("Nenhum jogador venceu!");
 		System.out.println("Empate: " + placar.retornaNumeroDeEmpates());
 
 	}

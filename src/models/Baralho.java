@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Baralho {
 	private List<Carta> baralho;
-	private List<Integer> valores = new ArrayList<Integer>();
+	private List<Integer> valores = new ArrayList<Integer>();//[21,4,32,27,11...]
 	private Random gerador = new Random();
 
 	public Baralho() {
@@ -60,16 +60,17 @@ public class Baralho {
 	public void preencheBaralho() {
 		Naipe[] naipes = Naipe.values();
 		Tipo[] tipos = Tipo.values();
+		
 		for (int j = 0; j < 4; j++) {
-			Naipe n = naipes[j];
+			Naipe naipe = naipes[j]; //Copas,Ouro,Espadas,Paus;
 			for (int valorDaCarta = 0; valorDaCarta < 13; valorDaCarta++) {
-				Tipo k = tipos[valorDaCarta];
+				Tipo tipo = tipos[valorDaCarta];//A, Dois, Tres, Quatro, Cinco, Seis, Sete, Oito, Nove, Dez, J, Q, K;
 				
 				if (valorDaCarta > 9) {
-					Carta carta = new Carta(n, k, 10);
+					Carta carta = new Carta(naipe, tipo, 10);
 					baralho.add(carta);
 				} else {
-					Carta carta = new Carta(n, k, valorDaCarta + 1);
+					Carta carta = new Carta(naipe, tipo, valorDaCarta + 1);
 					baralho.add(carta);
 				}
 

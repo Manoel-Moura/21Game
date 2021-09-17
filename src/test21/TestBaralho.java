@@ -39,16 +39,6 @@ public class TestBaralho {
 		assertTrue(baralho.getBaralho().get(0) != baralho.cartaDoTopo(0));
 	}
 	
-	@Test
-	public void testCartaDo() {
-		// quando
-		baralho.iniciaBaralho();
-		baralho.preencheBaralho();
-		baralho.embaralhar();
-		
-		// então
-		assertTrue(baralho.getBaralho().get(0) != baralho.cartaDoTopo(0));
-	}
-
+	
 
 }
